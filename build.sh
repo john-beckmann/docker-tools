@@ -44,11 +44,11 @@ BUILD_MINUTES=`expr $BUILD_ELAPSED / 60`
 BUILD_SECONDS=`expr $BUILD_ELAPSED - $BUILD_MINUTES \* 60`
 echo
 echo
-if [ $BUILD_MINUTES == 0 && $BUILD_SECONDS != 0 ]; then
+if [[ $BUILD_MINUTES == 0 ]] && [[ $BUILD_SECONDS != 0 ]]; then
 	echo "BUILD TIME: $BUILD_SECONDS seconds"
-elif [ $BUILD_MINUTES != 0 && $BUILD_SECONDS == 0 ]
+elif [[ $BUILD_MINUTES != 0 ]] && [[ $BUILD_SECONDS == 0 ]]; then
 	echo "BUILD TIME: $BUILD_MINUTES minutes"
-elif [ $BUILD_MINUTES == 0 && $BUILD_SECONDS == 0 ]
+elif [[ $BUILD_MINUTES == 0 ]] && [[ $BUILD_SECONDS == 0 ]]; then
 	echo "BUILD TIME: $BUILD_MINUTES minutes & $BUILD_SECONDS seconds" 
 fi
 echo
